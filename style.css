@@ -16,9 +16,7 @@
 /* ========================================= */
 
 .top-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative; /* Changé de absolute à relative */
     width: 100%;
     background-color: transparent;
     color: white;
@@ -26,8 +24,8 @@
     z-index: 50;
 }
 
-.top-bar .container-fluid {
-    padding: 0 40px;
+.top-bar .container {
+    padding: 0 20px;
 }
 
 .top-bar-content {
@@ -36,7 +34,6 @@
     align-items: center;
     width: 100%;
     padding: 12px 0;
-    /* MODIFICATION 2.A : Ligne border-bottom SUPPRIMÉE */
 }
 
 .top-bar .contact-info {
@@ -102,9 +99,17 @@
     color: var(--primary);
 }
 
-/* ASTUCE : Décale le reste du site vers le bas */
-.top-bar + .hero-section {
-    padding-top: 45px;
+/* ========================================= */
+/* CORRECTION 1 : Positionnement du header   */
+/* ========================================= */
+
+.header-fixed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Très important pour passer devant particles-js */
+    transition: all 0.3s ease;
 }
 
 /* ========================================= */
@@ -114,7 +119,6 @@
 .hero-section {
     position: relative;
     height: 100vh;
-    /* L'overlay est maintenant un dégradé bleu marine vers un violet/magenta transparent */
     background: linear-gradient(135deg, rgba(10, 37, 51, 0.85) 0%, rgba(75, 0, 130, 0.5) 100%),
                 url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1920&auto=format&fit=crop');
     background-size: cover;
@@ -146,7 +150,6 @@
     height: 100px; 
     position: relative;
     z-index: 10;
-    /* ON REMET LA LIGNE JUSTE ICI 👇 */
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
@@ -172,17 +175,9 @@
     border-radius: 2px;
 }
 
-.d1 {
-    background: #ff007c;
-}
-
-.d2 {
-    background: #fbb034;
-}
-
-.d3 {
-    background: #007bff;
-}
+.d1 { background: #ff007c; }
+.d2 { background: #fbb034; }
+.d3 { background: #007bff; }
 
 /* Navigation Links */
 .nav-links {
@@ -223,13 +218,8 @@
     transition: width 0.3s ease-in-out;
 }
 
-.nav-links > li > a::before {
-    top: 0;
-}
-
-.nav-links > li > a::after {
-    bottom: 0;
-}
+.nav-links > li > a::before { top: 0; }
+.nav-links > li > a::after { bottom: 0; }
 
 .nav-links > li > a:hover {
     color: var(--primary);
@@ -248,7 +238,7 @@
 .mega-menu {
     display: none;
     position: absolute;
-    top: 80px; /* MODIFICATION 2.C : Changé de 100px à 80px pour coller au menu */
+    top: 80px;
     left: 0;
     width: 100vw;
     background: var(--dark-blue);
@@ -294,13 +284,8 @@
     margin-right: 8px;
 }
 
-.mt-20 {
-    margin-top: 35px;
-}
-
-.mt-120 {
-    margin-top: 140px;
-}
+.mt-20 { margin-top: 35px; }
+.mt-120 { margin-top: 140px; }
 
 /* DROPDOWN PAGES */
 .has-dropdown:hover .dropdown-list {
@@ -341,7 +326,6 @@
 /* BOUTON AVEC EFFET PULSE + INVERSION       */
 /* ========================================= */
 
-/* 1. Le bouton avec l'animation de pulsation constante */
 .btn-yellow {
     background: var(--primary);
     color: white;
@@ -350,33 +334,21 @@
     text-decoration: none;
     font-size: 14px;
     display: inline-block;
-    border: 2px solid var(--primary); /* Bordure jaune pour l'échange de couleur */
-    transition: all 0.4s ease;        /* Transition fluide pour l'inversion */
-    
-    /* On active l'animation de halo jaune qui "émerge" */
-    animation: pulse-yellow 2s infinite; 
+    border: 2px solid var(--primary);
+    transition: all 0.4s ease;
+    animation: pulse-yellow 2s infinite;
+    white-space: nowrap;
 }
 
-/* 2. L'interchangement des couleurs au survol (Hover) */
 .btn-yellow:hover {
-    background: white;        /* Le fond devient blanc */
-    color: var(--primary);    /* Le texte devient jaune */
+    background: white;
+    color: var(--primary);
 }
 
-/* 3. La définition de l'animation de pulsation (le halo qui clignote) */
 @keyframes pulse-yellow {
-    0% {
-        /* Pas d'ombre au début */
-        box-shadow: 0 0 0 0 rgba(251, 176, 52, 0.7);
-    }
-    70% {
-        /* L'ombre s'agrandit vers l'extérieur et devient plus transparente */
-        box-shadow: 0 0 0 15px rgba(251, 176, 52, 0);
-    }
-    100% {
-        /* Elle disparaît complètement avant de recommencer */
-        box-shadow: 0 0 0 0 rgba(251, 176, 52, 0);
-    }
+    0% { box-shadow: 0 0 0 0 rgba(251, 176, 52, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(251, 176, 52, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(251, 176, 52, 0); }
 }
 
 /* Bouton outline */
@@ -396,11 +368,14 @@
     color: var(--dark-blue);
 }
 
-/* Content */
+/* ========================================= */
+/* CORRECTION 2 : Ajustement du contenu Hero */
+/* ========================================= */
+
 .hero-content {
     position: relative;
     z-index: 5;
-    margin-top: 18vh;
+    padding-top: 180px; /* On pousse le texte vers le bas pour laisser la place au header */
     color: white;
 }
 
@@ -417,11 +392,31 @@
     line-height: 1.2;
 }
 
-/* ***** MODIFICATION 2.E : Ajout de la règle pour le menu actif ***** */
+/* Menu actif */
 .nav-links > li > a.active {
     color: var(--primary);
 }
 
+/* ========================================= */
+/* CORRECTION 3 : Comportement Sticky        */
+/* ========================================= */
+
+.header-fixed.is-sticky {
+    position: fixed;
+    background: var(--dark-blue);
+    top: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Masquer la top-bar en scrollant pour gagner de la place */
+.header-fixed.is-sticky .top-bar {
+    display: none;
+}
+
+.header-fixed.is-sticky .flex-nav {
+    height: 75px;
+    border-bottom: none;
+}
 
 /* ========================================= */
 /* SECTION SERVICES - VERSION FIDÈLE         */
@@ -429,7 +424,7 @@
 
 .services-section {
     padding: 100px 0;
-    background-color: #f9f9f9; /* Fond très légèrement gris pour faire ressortir les cartes */
+    background-color: #f9f9f9;
 }
 
 .section-header {
@@ -455,18 +450,16 @@
 .services-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px; /* Espace serré comme sur le modèle */
+    gap: 20px;
 }
 
 .service-card {
-    /* Dégradé exact : Bleu royal vers Violet profond */
     background: linear-gradient(135deg, #3063fe 0%, #7d2ae8 100%);
     padding: 40px 25px;
     border-radius: 15px;
     text-align: center;
     color: white;
     transition: all 0.4s ease;
-    /* Ombre portée douce */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
@@ -478,11 +471,10 @@
     box-shadow: 0 20px 40px rgba(125, 42, 232, 0.3);
 }
 
-/* Style des icônes pour imiter des illustrations */
 .service-icon-container {
     width: 90px;
     height: 90px;
-    background: rgba(255, 255, 255, 0.2); /* Cercle translucide */
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -493,7 +485,6 @@
 .service-icon-container i {
     font-size: 35px;
     color: #ffffff;
-    /* On ajoute un petit effet de lueur sur l'icône */
     filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
 }
 
@@ -514,12 +505,12 @@
 }
 
 .read-more {
-    color: var(--primary); /* Ton jaune fbb034 */
+    color: var(--primary);
     font-weight: 700;
     text-decoration: none;
     font-size: 14px;
     transition: 0.3s;
-    margin-top: auto; /* Pousse le lien vers le bas */
+    margin-top: auto;
 }
 
 .read-more:hover {
@@ -530,6 +521,7 @@
 @media (max-width: 1024px) {
     .services-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
 @media (max-width: 600px) {
     .services-grid { grid-template-columns: 1fr; }
     .section-header h2 { font-size: 30px; }
