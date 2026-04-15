@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DoucSoft Technologies</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -176,7 +177,136 @@
     </div>
 </section>
 
+<section class="portfolio-section">
+    <div class="container">
+        <div class="section-header">
+            <p class="portfolio-subtitle">Nos projets réalisés</p>
+            <h2 class="portfolio-title">Quelques projets réalisés par <br> DoucSoft Technologies...</h2>
+        </div>
+    </div>
+
+    <!-- Swiper Slider -->
+    <div class="swiper portfolio-swiper">
+        <div class="swiper-wrapper">
+            <!-- Projet 1 -->
+            <div class="swiper-slide">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800" alt="Marketing">
+                    <div class="portfolio-overlay">
+                        <span>Inflowzz</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Projet 2 -->
+            <div class="swiper-slide">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=800" alt="Média">
+                    <div class="portfolio-overlay">
+                        <span>MaliOnline</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Projet 3 -->
+            <div class="swiper-slide">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800" alt="Industrie">
+                    <div class="portfolio-overlay">
+                        <span>MBD Petroleum</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Projet 4 -->
+            <div class="swiper-slide">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=800" alt="E-commerce">
+                    <div class="portfolio-overlay">
+                        <span>Agogo.ml</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- On garde les points en bas -->
+        <!-- <div class="swiper-pagination"></div> -->
+
+        <!-- ON AJOUTE LES FLÈCHES ICI -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</section>
+
+<!-- Bouton Retour en haut (vu sur votre image) -->
+<a href="#" class="back-to-top"><i class="fa-solid fa-chevron-up"></i></a>
+
+<!-- FOOTER PRINCIPAL -->
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <!-- Colonne 1 : Description -->
+            <div class="footer-col">
+                <div class="logo footer-logo">
+                    <div class="logo-icon">
+                        <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
+                    </div>
+                    DOUCSOFT
+                </div>
+                <p class="footer-about">
+                    DoucSoft est une entreprise de services numériques (ESN) basée au Mali, qui ambitionne d'être parmi les leaders de la révolution numérique en Afrique, en matière de conseil, de services informatiques et de transformation numérique.
+                </p>
+            </div>
+
+            <!-- Colonne 2 : Liens -->
+            <div class="footer-col">
+                <h3 class="footer-title">Liens Utiles</h3>
+                <ul class="footer-list">
+                    <li><a href="#"><i class="fa-solid fa-caret-right"></i> À propos</a></li>
+                    <li><a href="#"><i class="fa-solid fa-caret-right"></i> Foire Aux Questions</a></li>
+                    <li><a href="#"><i class="fa-solid fa-caret-right"></i> Nos Réalisations</a></li>
+                    <li><a href="#"><i class="fa-solid fa-caret-right"></i> Confidentialité</a></li>
+                    <li><a href="#"><i class="fa-solid fa-caret-right"></i> Conditions d'Utilisation</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 3 : Newsletter -->
+            <div class="footer-col">
+                <h3 class="footer-title">Newsletter</h3>
+                <p class="footer-text">Abonnez-vous à notre Newsletter et restez informés de nos offres et services.</p>
+                <div class="newsletter-box">
+                    <input type="email" placeholder="Entrer une adresse email">
+                    <button class="btn-yellow-sab">S'ABONNER</button>
+                </div>
+            </div>
+
+            <!-- Colonne 4 : Contact -->
+            <div class="footer-col">
+                <h3 class="footer-title">Contactez-Nous</h3>
+                <ul class="footer-contact">
+                    <li>
+                        <i class="fa-solid fa-house"></i>
+                        <span>Sotuba ACI, Près de Japan Motors sur la route de Koulikoro, Immeuble Wafa Simpara (Telecel)</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+223 20 24 26 72</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>contact@doucsoft.tech</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-copyright">
+            <p>Copyright © 2021. Tous droits réservés DoucSoft Sarl.</p>
+        </div>
+    </div>
+</footer>
+
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

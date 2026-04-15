@@ -526,3 +526,309 @@
     .services-grid { grid-template-columns: 1fr; }
     .section-header h2 { font-size: 30px; }
 }
+
+/* ========================================= */
+/* SECTION PORTFOLIO                         */
+/* ========================================= */
+
+.portfolio-section {
+    padding: 80px 0;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.portfolio-subtitle {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    color: #888;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.portfolio-title {
+    text-align: center;
+    font-size: 45px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.2;
+    margin-bottom: 50px;
+}
+
+.portfolio-swiper {
+    padding: 20px 0 50px 0;
+}
+
+.portfolio-item {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(125, 42, 232, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.portfolio-overlay span {
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+}
+
+/* BOUTON BACK TO TOP (Jaune en bas à droite) */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    z-index: 1000;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.back-to-top:hover {
+    background: var(--dark-blue);
+    transform: translateY(-5px);
+}
+
+/* Ajustement responsive Swiper */
+@media (max-width: 768px) {
+    .portfolio-title { font-size: 30px; }
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 280px;      /* Force une hauteur identique pour toutes les images */
+    object-fit: cover;  /* Empêche l'image d'être écrasée ou déformée */
+    display: block;
+}
+
+/* --- Style des flèches Swiper --- */
+
+/* Taille et forme du cercle */
+.swiper-button-next, 
+.swiper-button-prev {
+    width: 50px !important;
+    height: 50px !important;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond noir semi-transparent */
+    border: 2px solid #fff;              /* Bordure blanche */
+    border-radius: 50%;                  /* Cercle parfait */
+    color: #fff !important;              /* Couleur de la flèche */
+    transition: all 0.3s ease;
+}
+
+/* Taille de l'icône à l'intérieur */
+.swiper-button-next:after, 
+.swiper-button-prev:after {
+    font-size: 18px !important;
+    font-weight: bold;
+}
+
+/* Effet au survol */
+.swiper-button-next:hover, 
+.swiper-button-prev:hover {
+    background-color: var(--primary);    /* Devient jaune au survol */
+    border-color: var(--primary);
+}
+
+/* Positionnement pour qu'elles ne collent pas trop aux bords */
+.swiper-button-prev { 
+    left: 20px !important; 
+}
+
+.swiper-button-next { 
+    right: 20px !important; 
+}
+
+/* Ajustement responsive pour mobile */
+@media (max-width: 768px) {
+    .swiper-button-next, 
+    .swiper-button-prev {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    .swiper-button-next:after, 
+    .swiper-button-prev:after {
+        font-size: 14px !important;
+    }
+    
+    .swiper-button-prev { 
+        left: 10px !important; 
+    }
+    
+    .swiper-button-next { 
+        right: 10px !important; 
+    }
+}
+
+/* --- Bonus : Le bouton "Voir Plus" Jaune sur l'image --- */
+.portfolio-overlay span {
+    background: var(--primary); /* Fond jaune */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.portfolio-overlay span:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+
+/* --- FOOTER --- */
+.main-footer {
+    background-color: #3e00be; /* Violet profond comme sur l'image */
+    background-image: linear-gradient(135deg, #3e00be 0%, #2a008a 100%);
+    color: white;
+    padding: 80px 0 30px 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.footer-logo { font-size: 24px; margin-bottom: 25px; }
+
+.footer-about {
+    font-size: 14px;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.footer-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* Listes et Liens */
+.footer-list { list-style: none; }
+.footer-list li { margin-bottom: 12px; }
+.footer-list li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.footer-list li a i { color: #fbb034; font-size: 12px; }
+.footer-list li a:hover { color: #fbb034; transform: translateX(5px); }
+
+/* Newsletter */
+.footer-text { font-size: 14px; margin-bottom: 20px; opacity: 0.9; }
+.newsletter-box input {
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 12px 15px;
+    color: white;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    outline: none;
+}
+.newsletter-box .btn-yellow {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* Contact */
+.footer-contact { list-style: none; }
+.footer-contact li {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.footer-contact li i { color: #fbb034; font-size: 18px; margin-top: 3px; }
+
+/* Copyright bar */
+.footer-copyright {
+    border-top: 1px solid rgba(0, 255, 0, 0.2); /* Ligne verdâtre subtile comme l'image */
+    padding-top: 30px;
+    text-align: center;
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .partners-flex { justify-content: center; }
+}
+
+@media (max-width: 600px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-col { text-align: center; }
+    .footer-list li a { justify-content: center; }
+    .footer-contact li { flex-direction: column; align-items: center; text-align: center; }
+}
+
+.btn-yellow-sab {
+    background: var(--primary);
+    color: white;
+    padding: 18px 30px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
+    border: 2px solid var(--primary);
+    transition: all 0.4s ease;
+    white-space: nowrap;
+}
+
+.btn-yellow-sab-sab:hover {
+    background: white;
+    color: var(--primary);
+}

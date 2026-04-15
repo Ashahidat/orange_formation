@@ -54,3 +54,44 @@ window.addEventListener("scroll", function() {
         header.classList.remove("is-sticky");
     }
 });
+
+// Initialisation du Swiper Portfolio avec navigation
+const swiper = new Swiper('.portfolio-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    // AJOUT DE LA NAVIGATION PAR FLÈCHES
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        // quand la largeur est >= 640px
+        640: {
+            slidesPerView: 2,
+        },
+        // quand la largeur est >= 1024px
+        1024: {
+            slidesPerView: 3,
+            centeredSlides: true,
+        }
+    }
+});
+
+// Animation du bouton Back to Top (apparaît au scroll)
+window.addEventListener('scroll', function() {
+    const backToTop = document.querySelector('.back-to-top');
+    if (window.scrollY > 400) {
+        backToTop.style.display = "flex";
+    } else {
+        backToTop.style.display = "none";
+    }
+});
