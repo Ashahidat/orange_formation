@@ -22,6 +22,8 @@ particlesJS("particles-js", {
 // Ajout d'un écouteur pour détecter les clics partout sur la page
 document.addEventListener('click', (event) => {
   const canvas = document.querySelector('#particles-js canvas');
+  if (!canvas) return; // Vérifie si le canevas existe
+
   const rect = canvas.getBoundingClientRect();
   const mouseX = event.clientX - rect.left;
   const mouseY = event.clientY - rect.top;
