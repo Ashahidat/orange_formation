@@ -3,134 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DoucSoft Technologies | Accueil</title>
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Icons -->
+    <title>DoucSoft Technologies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="hero-section">
-        <div id="particles-js"></div>
+<header class="hero-section">
+    <div id="particles-js"></div>
 
-        <!-- TOP BAR -->
-        <div class="top-bar">
-            <div class="container flex-between">
-                <div class="contact-info">
-                    <a href="mailto:contact@doucsoft.tech"><i class="fa-regular fa-envelope"></i> contact@doucsoft.tech</a>
-                    <span><i class="fa-solid fa-phone"></i> +223 44 50 08 31</span>
+    <!-- NAVBAR -->
+    <nav class="main-nav">
+        <div class="container-fluid flex-nav">
+            <div class="logo">
+                <div class="logo-icon">
+                    <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
                 </div>
-                <div class="social-lang">
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    </div>
-                    <span class="separator">|</span>
-                    <div class="lang-switcher">
-                        <i class="fa-solid fa-globe"></i> Français <i class="fa-solid fa-chevron-down"></i>
-                        <ul class="lang-dropdown">
-                            <li><a href="#">Français</a></li>
-                            <li><a href="#">English</a></li>
-                        </ul>
-                    </div>
-                </div>
+                DOUCSOFT
             </div>
+
+            <ul class="nav-links">
+                <li><a href="#">ACCUEIL</a></li>
+                
+                <!-- MEGA MENU SERVICES -->
+                <li class="has-mega">
+                    <a href="#" class="active-link">SERVICES <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="mega-menu">
+                        <div class="container mega-grid">
+                            <!-- Col 1 -->
+                            <div class="mega-col">
+                                <h3>DÉVELOPPEMENT WEB</h3>
+                                <ul>
+                                    <li><a href="#"><i class="fa-solid fa-chevron-right"></i> APPLICATIONS WEB</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-chevron-right"></i> SOLUTIONS E-COMMERCE</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-chevron-right"></i> CMS</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-chevron-right"></i> CRM, ERP, BPM</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-chevron-right"></i> SITES WEB - PLATEFORME WEB</a></li>
+                                </ul>
+                                <h3 class="mt-20">SÉCURITÉ & CYBERSÉCURITÉ</h3>
+                            </div>
+                            <!-- Col 2 -->
+                            <div class="mega-col">
+                                <h3>APPLICATIONS MOBILES</h3>
+                                <ul>
+                                    <li><a href="#"><i class="fa-solid fa-chevron-right"></i> APPLICATION HYBRIDE</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-chevron-right"></i> APPLICATION NATIVE</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-chevron-right"></i> SOUMISSION SUR PLAYSTORE & APP STORE</a></li>
+                                </ul>
+                                <h3 class="mt-20">MAINTENANCE INFORMATIQUE</h3>
+                            </div>
+                            <!-- Col 3 -->
+                            <div class="mega-col">
+                                <h3>WEB DESIGN & INFOGRAPHIE</h3>
+                                <ul>
+                                    <li><a href="#"><i class="fa-solid fa-chevron-right"></i> CONCEPTION WEB</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-chevron-right"></i> CONCEPTION AFFICHE & LOGO</a></li>
+                                    <li><a href="#"><i class="fa-solid fa-chevron-right"></i> RESPONSIVE DESIGN</a></li>
+                                </ul>
+                                <h3 class="mt-20">MARKETING DIGITAL & SEO</h3>
+                            </div>
+                            <!-- Col 4 -->
+                            <div class="mega-col">
+                                <h3>TELECOM & TÉLÉPHONIE</h3>
+                                <h3 class="mt-120">FORMATION PRO</h3>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="#">RÉALISATIONS</a></li>
+
+                <!-- DROPDOWN PAGES -->
+                <li class="has-dropdown">
+                    <a href="#">PAGES <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-list">
+                        <li><a href="#">À PROPOS</a></li>
+                        <li><a href="#">CGU</a></li>
+                        <li><a href="#">CONFIDENTIALITÉ</a></li>
+                        <li><a href="#">L'ÉQUIPE</a></li>
+                        <li><a href="#">GALERIE</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">BLOG</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+
+            <a href="#" class="btn-yellow">DEMANDER UN DEVIS</a>
         </div>
+    </nav>
 
-        <!-- MAIN NAVIGATION -->
-        <nav class="main-nav">
-            <div class="container flex-between">
-                <div class="logo">
-                    <div class="logo-icon">
-                        <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
-                    </div>
-                    DOUCSOFT
-                </div>
-
-                <ul class="nav-links">
-                    <li><a href="#" class="active">ACCUEIL</a></li>
-                    
-                    <li class="has-dropdown">
-                        <a href="#">SERVICES <i class="fa-solid fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <!-- Niveau 1 : Développement Web -->
-                            <li class="has-submenu">
-                                <a href="#">Développement Web <i class="fa-solid fa-chevron-right"></i></a>
-                                <ul class="submenu">
-                                    <li class="has-submenu">
-                                        <a href="#">Applications Web <i class="fa-solid fa-chevron-right"></i></a>
-                                        <ul class="submenu side">
-                                            <li><a href="#">Solutions E-commerce</a></li>
-                                            <li><a href="#">CMS</a></li>
-                                            <li><a href="#">CRM, ERP, BPM</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Sites Web - Plateforme Web</a></li>
-                                </ul>
-                            </li>
-                            <!-- Niveau 1 : Applications Mobiles -->
-                            <li class="has-submenu">
-                                <a href="#">Applications Mobiles <i class="fa-solid fa-chevron-right"></i></a>
-                                <ul class="submenu">
-                                    <li><a href="#">Application Hybride</a></li>
-                                    <li><a href="#">Application Native</a></li>
-                                    <li><a href="#">Soumission PlayStore & App Store</a></li>
-                                </ul>
-                            </li>
-                            <!-- Niveau 1 : Web Design -->
-                            <li class="has-submenu">
-                                <a href="#">Web Design & Infographie <i class="fa-solid fa-chevron-right"></i></a>
-                                <ul class="submenu">
-                                    <li><a href="#">Conception Web</a></li>
-                                    <li><a href="#">Conception Affiche & Logo</a></li>
-                                    <li><a href="#">Responsive Design</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Telecom & Téléphonie</a></li>
-                            <li><a href="#">Sécurité & Cybersécurité</a></li>
-                            <li><a href="#">Maintenance Informatique</a></li>
-                            <li><a href="#">Marketing Digital & SEO</a></li>
-                            <li><a href="#">Formation Pro</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="#">RÉALISATIONS</a></li>
-
-                    <li class="has-dropdown">
-                        <a href="#">PAGES <i class="fa-solid fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">À propos</a></li>
-                            <li><a href="#">CGU</a></li>
-                            <li><a href="#">Confidentialité</a></li>
-                            <li><a href="#">L'équipe</a></li>
-                            <li><a href="#">Galerie</a></li>
-                            <li><a href="#">FAQ</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="#">BLOG</a></li>
-                    <li><a href="#">CONTACT</a></li>
-                </ul>
-
-                <a href="#" class="btn-yellow">DEMANDER UN DEVIS</a>
-            </div>
-        </nav>
-
-        <!-- HERO CONTENT -->
-        <div class="hero-content">
-            <div class="container">
-                <p class="brand-sub">DoucSoft Technologies</p>
-                <h1>Le numérique s'ouvre à <br>vous !</h1>
-                <a href="#" class="btn-outline">QUI NOUS SOMMES</a>
-            </div>
+    <!-- CONTENT -->
+    <div class="hero-content">
+        <div class="container">
+            <p class="sub-title">DoucSoft Technologies</p>
+            <h1>Le numérique s'ouvre à <br>vous !</h1>
+            <a href="#" class="btn-outline">QUI NOUS SOMMES</a>
         </div>
-    </header>
+    </div>
+</header>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

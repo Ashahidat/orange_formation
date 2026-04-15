@@ -1,14 +1,12 @@
 particlesJS("particles-js", {
   "particles": {
-    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+    "number": { "value": 90, "density": { "enable": true, "value_area": 800 } },
     "color": { "value": "#ffffff" },
-    "opacity": { "value": 0.2 },
+    "opacity": { "value": 0.3 },
     "size": { "value": 3 },
     "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.2, "width": 1 },
     "move": { "enable": true, "speed": 1.5 }
   },
-  "interactivity": {
-    "events": { "onhover": { "enable": true, "mode": "grab" } }
-  },
+  "interactivity": { "events": { "onhover": { "enable": true, "mode": "grab" } } },
   "retina_detect": true
 });
