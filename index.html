@@ -3,70 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar - DoucSoft Technologies</title>
-    <style>
-        /* Ajoutez ici vos styles CSS pour personnaliser la barre de navigation */
-    </style>
+    <title>DoucSoft Technologies | Accueil</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Barre Supérieure (Top-Bar) -->
-    <div class="top-bar">
-        <div class="contact-info">
-            <span>Email : <a href="mailto:contact@doucsoft.tech">contact@doucsoft.tech</a></span>
-            <span>Téléphone : <a href="tel:+22344500831">+223 44 50 08 31</a></span>
-        </div>
-        <div class="language-selector">
-            <select name="language" id="language">
-                <option value="fr">Français</option>
-                <option value="en">English</option>
-            </select>
-        </div>
-    </div>
 
-    <!-- Menu Principal (Main Nav) -->
-    <nav class="main-nav">
-        <div class="logo">
-            <a href="#">DoucSoft Technologies</a>
+    <header class="hero-section">
+        <div id="particles-js"></div>
+
+        <!-- TOP BAR -->
+        <div class="top-bar">
+            <div class="container flex-between">
+                <div class="contact-info">
+                    <a href="mailto:contact@doucsoft.tech"><i class="fa-regular fa-envelope"></i> contact@doucsoft.tech</a>
+                    <span><i class="fa-solid fa-phone"></i> +223 44 50 08 31</span>
+                </div>
+                <div class="social-lang">
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                    <span class="separator">|</span>
+                    <div class="lang-switcher">
+                        <i class="fa-solid fa-globe"></i> Français <i class="fa-solid fa-chevron-down"></i>
+                        <ul class="lang-dropdown">
+                            <li><a href="#">Français</a></li>
+                            <li><a href="#">English</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-        <ul class="nav-links">
-            <li><a href="#">Accueil</a></li>
-            <li class="dropdown">
-                <a href="#">Services</a>
-                <ul class="dropdown-menu">
-                    <li class="dropdown">
-                        <a href="#">Développement Web</a>
+
+        <!-- MAIN NAVIGATION -->
+        <nav class="main-nav">
+            <div class="container flex-between">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
+                    </div>
+                    DOUCSOFT
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="#" class="active">ACCUEIL</a></li>
+                    
+                    <li class="has-dropdown">
+                        <a href="#">SERVICES <i class="fa-solid fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Applications Web</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Solutions E-commerce</a></li>
-                                    <li><a href="#">CMS</a></li>
-                                    <li><a href="#">CRM</a></li>
-                                    <li><a href="#">ERP</a></li>
-                                    <li><a href="#">BPM</a></li>
+                            <!-- Niveau 1 : Développement Web -->
+                            <li class="has-submenu">
+                                <a href="#">Développement Web <i class="fa-solid fa-chevron-right"></i></a>
+                                <ul class="submenu">
+                                    <li class="has-submenu">
+                                        <a href="#">Applications Web <i class="fa-solid fa-chevron-right"></i></a>
+                                        <ul class="submenu side">
+                                            <li><a href="#">Solutions E-commerce</a></li>
+                                            <li><a href="#">CMS</a></li>
+                                            <li><a href="#">CRM, ERP, BPM</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Sites Web - Plateforme Web</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Sites Web - Plateforme Web</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#">Applications Mobiles</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Application Hybride</a></li>
-                            <li><a href="#">Application Native</a></li>
-                            <li><a href="#">Soumission sur PlayStore & App Store</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#">Web Design & Infographie</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Conception Web</a></li>
-                            <li><a href="#">Conception Affiche & Logo</a></li>
-                            <li><a href="#">Responsive Design</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#">Autres Pôles</a>
-                        <ul class="dropdown-menu">
+                            <!-- Niveau 1 : Applications Mobiles -->
+                            <li class="has-submenu">
+                                <a href="#">Applications Mobiles <i class="fa-solid fa-chevron-right"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="#">Application Hybride</a></li>
+                                    <li><a href="#">Application Native</a></li>
+                                    <li><a href="#">Soumission PlayStore & App Store</a></li>
+                                </ul>
+                            </li>
+                            <!-- Niveau 1 : Web Design -->
+                            <li class="has-submenu">
+                                <a href="#">Web Design & Infographie <i class="fa-solid fa-chevron-right"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="#">Conception Web</a></li>
+                                    <li><a href="#">Conception Affiche & Logo</a></li>
+                                    <li><a href="#">Responsive Design</a></li>
+                                </ul>
+                            </li>
                             <li><a href="#">Telecom & Téléphonie</a></li>
                             <li><a href="#">Sécurité & Cybersécurité</a></li>
                             <li><a href="#">Maintenance Informatique</a></li>
@@ -74,26 +97,40 @@
                             <li><a href="#">Formation Pro</a></li>
                         </ul>
                     </li>
+
+                    <li><a href="#">RÉALISATIONS</a></li>
+
+                    <li class="has-dropdown">
+                        <a href="#">PAGES <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">À propos</a></li>
+                            <li><a href="#">CGU</a></li>
+                            <li><a href="#">Confidentialité</a></li>
+                            <li><a href="#">L'équipe</a></li>
+                            <li><a href="#">Galerie</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">BLOG</a></li>
+                    <li><a href="#">CONTACT</a></li>
                 </ul>
-            </li>
-            <li><a href="#">Réalisations</a></li>
-            <li class="dropdown">
-                <a href="#">Pages</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">À propos</a></li>
-                    <li><a href="#">CGU</a></li>
-                    <li><a href="#">Confidentialité</a></li>
-                    <li><a href="#">L'équipe</a></li>
-                    <li><a href="#">Galerie</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <div class="action-button">
-            <a href="#" class="btn">Demander un Devis</a>
+
+                <a href="#" class="btn-yellow">DEMANDER UN DEVIS</a>
+            </div>
+        </nav>
+
+        <!-- HERO CONTENT -->
+        <div class="hero-content">
+            <div class="container">
+                <p class="brand-sub">DoucSoft Technologies</p>
+                <h1>Le numérique s'ouvre à <br>vous !</h1>
+                <a href="#" class="btn-outline">QUI NOUS SOMMES</a>
+            </div>
         </div>
-    </nav>
+    </header>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
