@@ -12,6 +12,41 @@
 }
 
 /* ========================================= */
+/* TAILLE EXACTE DES LOGOS (HEADER & FOOTER) */
+/* ========================================= */
+
+/* 1. Le logo dans la barre de navigation (Header) */
+a.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.site-logo {
+    height: auto;
+    width: 200px; /* On fixe la largeur plutôt que la hauteur pour un meilleur contrôle */
+    max-width: 100%;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+/* Quand on scroll (menu sticky), on réduit légèrement le logo */
+.header-fixed.is-sticky .site-logo {
+    width: 160px; 
+}
+
+/* 2. Le logo spécifiquement dans le Footer */
+.footer-logo { 
+    margin-bottom: 25px; 
+    display: inline-block;
+}
+
+.footer-logo .site-logo {
+    width: 220px; /* Taille exacte du logo dans le footer du site original */
+    max-height: none; /* Annule d'éventuelles contraintes de hauteur */
+}
+
+/* ========================================= */
 /* STYLE DE LA TOP BAR IDENTIQUE AU MODÈLE   */
 /* ========================================= */
 
@@ -163,23 +198,6 @@
 /* --- STYLE DU NOUVEAU LOGO IMAGE --- */
 a.logo {
     text-decoration: none; /* Enlève le soulignement potentiel du lien */
-}
-
-.site-logo {
-    max-height: 32px; /* Réduit un peu pour libérer de l'espace pour le menu */
-    width: auto;
-    transition: all 0.3s ease;
-    display: block;
-}
-
-/* Réduire la taille du logo quand on scroll */
-.header-fixed.is-sticky .site-logo {
-    max-height: 25px;
-}
-
-/* Ajustement spécifique pour la taille du logo dans le footer */
-.footer-logo .site-logo {
-    max-height: 55px; 
 }
 
 /* Navigation Links */
@@ -724,126 +742,157 @@ a.logo {
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
+/* ========================================= */
+/* --- FOOTER (COPIE EXACTE DU MODÈLE) ---   */
+/* ========================================= */
 
-/* --- FOOTER --- */
 .main-footer {
-    background-color: #3e00be; /* Violet profond comme sur l'image */
-    background-image: linear-gradient(135deg, #3e00be 0%, #2a008a 100%);
+    /* Ajout du violet exact et de la carte du monde en fond */
+    background-color: #3610a6; 
+    background-image: url('https://doucsoft.tech/assets/front/img/map.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     color: white;
-    padding: 80px 0 30px 0;
+    padding: 70px 0 20px 0; /* Espacements ajustés pour faire plus compact */
+    position: relative;
+}
+
+/* Voile subtil pour que le texte reste ultra lisible sur la map */
+.main-footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(54, 16, 166, 0.85); /* Violet très opaque */
+    z-index: 1;
+}
+
+.main-footer .container {
+    position: relative;
+    z-index: 2; /* Place le texte par-dessus l'overlay */
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-    gap: 40px;
-    margin-bottom: 60px;
-}
-
-.footer-logo { 
-    font-size: 24px; 
-    margin-bottom: 25px; 
-    display: inline-block;
+    /* Proportions exactes : la 1ère et 4ème colonne sont plus larges */
+    grid-template-columns: 1.8fr 1fr 1.3fr 1.6fr;
+    gap: 30px;
+    margin-bottom: 40px;
 }
 
 .footer-about {
-    font-size: 14px;
-    line-height: 1.8;
+    font-size: 13.5px; /* Typographie ajustée */
+    line-height: 1.7;
     opacity: 0.9;
+    padding-right: 15px; /* Espace pour ne pas coller à la 2ème colonne */
 }
 
 .footer-title {
     font-size: 18px;
     font-weight: 700;
-    margin-bottom: 30px;
-    position: relative;
+    margin-bottom: 25px;
 }
 
-/* Listes et Liens */
+/* --- Listes et Liens --- */
 .footer-list { list-style: none; }
 .footer-list li { margin-bottom: 12px; }
 .footer-list li a {
     color: white;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13.5px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     transition: 0.3s;
+    opacity: 0.9;
 }
 
-.footer-list li a i { color: #fbb034; font-size: 12px; }
-.footer-list li a:hover { color: #fbb034; transform: translateX(5px); }
+.footer-list li a i { color: #fbb034; font-size: 10px; }
+.footer-list li a:hover { color: #fbb034; opacity: 1; transform: translateX(5px); }
 
-/* Newsletter */
-.footer-text { font-size: 14px; margin-bottom: 20px; opacity: 0.9; }
+/* --- Newsletter --- */
+.footer-text { 
+    font-size: 13.5px; 
+    line-height: 1.6; 
+    margin-bottom: 15px; 
+    opacity: 0.9; 
+}
+
 .newsletter-box input {
     width: 100%;
     background: transparent;
     border: 1px solid rgba(255,255,255,0.4);
-    padding: 12px 15px;
+    padding: 10px 15px; /* Réduction de la hauteur de l'input */
     color: white;
-    border-radius: 4px;
-    margin-bottom: 10px;
+    border-radius: 0; /* Bords droits */
+    margin-bottom: 15px;
     outline: none;
+    font-size: 13px;
+    transition: 0.3s ease;
 }
-.newsletter-box .btn-yellow {
-    width: 100%;
-    padding: 12px;
+
+.newsletter-box input:focus {
+    border-color: #fbb034;
+}
+
+/* Le bouton d'abonnement parfaitement proportionné */
+.btn-yellow-sab {
+    background: var(--primary);
+    color: white;
+    padding: 10px 25px; /* CORRECTION ICI : Padding largement réduit */
+    font-weight: 700;
+    text-transform: uppercase;
     border: none;
     cursor: pointer;
     font-size: 13px;
+    display: inline-block;
+    transition: all 0.3s ease;
 }
 
-/* Contact */
+.btn-yellow-sab:hover { /* Correction de l'erreur de frappe "sab-sab" */
+    background: white;
+    color: var(--primary);
+}
+
+/* --- Contact --- */
 .footer-contact { list-style: none; }
 .footer-contact li {
     display: flex;
     gap: 15px;
-    margin-bottom: 20px;
-    font-size: 14px;
-    line-height: 1.5;
+    align-items: flex-start; /* Garde l'icône en haut face à la 1ère ligne de l'adresse */
+    margin-bottom: 18px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    opacity: 0.9;
 }
-.footer-contact li i { color: #fbb034; font-size: 18px; margin-top: 3px; }
 
-/* Copyright bar */
+.footer-contact li i { 
+    color: #fbb034; 
+    font-size: 16px; 
+    margin-top: 3px; /* Descend très légèrement l'icône pour s'aligner au texte */
+}
+
+/* --- Copyright bar --- */
 .footer-copyright {
-    border-top: 1px solid rgba(0, 255, 0, 0.2); /* Ligne verdâtre subtile comme l'image */
-    padding-top: 30px;
+    /* Ligne fine verte sombre comme sur la capture d'écran */
+    border-top: 1px solid rgba(0, 150, 0, 0.4); 
+    padding-top: 25px;
     text-align: center;
     font-size: 13px;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE FOOTER */
 @media (max-width: 1024px) {
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-    .partners-flex { justify-content: center; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .footer-about { padding-right: 0; }
 }
 
 @media (max-width: 600px) {
-    .footer-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 30px; }
     .footer-col { text-align: center; }
     .footer-list li a { justify-content: center; }
     .footer-contact li { flex-direction: column; align-items: center; text-align: center; }
-}
-
-.btn-yellow-sab {
-    background: var(--primary);
-    color: white;
-    padding: 18px 30px;
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 14px;
-    display: inline-block;
-    border: 2px solid var(--primary);
-    transition: all 0.4s ease;
-    white-space: nowrap;
-}
-
-.btn-yellow-sab-sab:hover {
-    background: white;
-    color: var(--primary);
 }
 
 /* ========================================= */
