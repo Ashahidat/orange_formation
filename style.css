@@ -358,7 +358,7 @@ a.logo {
     100% { box-shadow: 0 0 0 0 rgba(251, 176, 52, 0); }
 }
 
-/* Bouton outline */
+/* Bouton outline - MODIFICATION 3 : margin-top augmenté */
 .btn-outline {
     display: inline-block;
     border: 2px solid white;
@@ -366,7 +366,7 @@ a.logo {
     padding: 15px 35px;
     text-decoration: none;
     font-weight: 700;
-    margin-top: 30px;
+    margin-top: 50px; /* MODIFIÉ : Au lieu de 30px, repousse le bouton plus bas */
     transition: all 0.3s ease;
 }
 
@@ -379,10 +379,11 @@ a.logo {
 /* CORRECTION 2 : Ajustement du contenu Hero */
 /* ========================================= */
 
+/* MODIFICATION 1 : padding-top en vh pour descendre et centrer le texte */
 .hero-content {
     position: relative;
     z-index: 5;
-    padding-top: 180px; /* On pousse le texte vers le bas pour laisser la place au header */
+    padding-top: 32vh; /* MODIFIÉ : Remplace les 180px pour bien descendre le texte */
     color: white;
 }
 
@@ -393,17 +394,11 @@ a.logo {
     letter-spacing: 1px;
 }
 
+/* MODIFICATION 2 : line-height augmenté pour aérer le H1 */
 .hero-content h1 {
     font-size: 60px;
     font-weight: 700;
-    line-height: 1.2;
-}
-
-/* Modification de la police pour "DoucSoft Technologies" */
-.hero-content .sub-title {
-    font-family: 'Source Serif Pro', serif !important;
-    font-size: 24px !important;
-    font-weight: 400;
+    line-height: 1.4; /* MODIFIÉ : Au lieu de 1.2, cela aère l'espace entre les deux lignes */
 }
 
 /* Menu actif */
@@ -853,6 +848,7 @@ a.logo {
 
 /* ========================================= */
 /* STYLE SPÉCIFIQUE POUR "DoucSoft Technologies" */
+/* MODIFICATION 4 : Ajout de margin-bottom   */
 /* ========================================= */
 
 .hero-content .sub-title {
@@ -872,4 +868,6 @@ a.logo {
     text-decoration: none !important;
     text-align: left !important;
     text-indent: 0px !important;
+    
+    margin-bottom: 25px !important; /* NOUVEAU : Ajoute de l'air sous le petit titre */
 }
