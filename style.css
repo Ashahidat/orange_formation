@@ -392,6 +392,13 @@
     line-height: 1.2;
 }
 
+/* Modification de la police pour "DoucSoft Technologies" */
+.hero-content .sub-title {
+    font-family: 'Source Serif Pro', serif !important;
+    font-size: 24px !important;
+    font-weight: 400;
+}
+
 /* Menu actif */
 .nav-links > li > a.active {
     color: var(--primary);
