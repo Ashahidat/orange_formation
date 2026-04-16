@@ -153,20 +153,28 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+/* Logo - Version nettoyée */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
 /* --- STYLE DU NOUVEAU LOGO IMAGE --- */
 a.logo {
     text-decoration: none; /* Enlève le soulignement potentiel du lien */
 }
 
 .site-logo {
-    max-height: 45px; /* Hauteur par défaut dans la barre de navigation */
+    max-height: 32px; /* Réduit un peu pour libérer de l'espace pour le menu */
     width: auto;
     transition: all 0.3s ease;
+    display: block;
 }
 
-/* Réduire la taille du logo quand on scroll (la barre devient plus petite) */
+/* Réduire la taille du logo quand on scroll */
 .header-fixed.is-sticky .site-logo {
-    max-height: 35px;
+    max-height: 25px;
 }
 
 /* Ajustement spécifique pour la taille du logo dans le footer */
@@ -199,6 +207,10 @@ a.logo {
     transition: 0.3s;
     position: relative;
     padding: 8px 0;
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+    display: inline-flex; 
+    align-items: center;
+    gap: 6px; /* Ajoute un espace propre entre le mot et la flèche */
 }
 
 .nav-links > li > a::before,
@@ -837,4 +849,27 @@ a.logo {
 .btn-yellow-sab-sab:hover {
     background: white;
     color: var(--primary);
+}
+
+/* ========================================= */
+/* STYLE SPÉCIFIQUE POUR "DoucSoft Technologies" */
+/* ========================================= */
+
+.hero-content .sub-title {
+    color: #FFFFFF !important;
+    background-color: transparent !important;
+    font-family: "Source Serif Pro", serif !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    font-kerning: auto !important;
+    font-optical-sizing: auto !important;
+    font-stretch: 100% !important;
+    font-variation-settings: normal !important;
+    font-feature-settings: normal !important;
+    text-transform: capitalize !important;
+    text-decoration: none !important;
+    text-align: left !important;
+    text-indent: 0px !important;
 }
