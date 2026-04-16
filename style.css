@@ -376,21 +376,75 @@ a.logo {
     100% { box-shadow: 0 0 0 0 rgba(251, 176, 52, 0); }
 }
 
-/* Bouton outline - MODIFICATION 3 : margin-top augmenté */
+/* ========================================= */
+/* BOUTON "QUI NOUS SOMMES" AVEC EFFET DRAW  */
+/* ========================================= */
+
 .btn-outline {
     display: inline-block;
-    border: 2px solid white;
+    position: relative; /* Indispensable pour positionner les traits */
     color: white;
     padding: 15px 35px;
     text-decoration: none;
     font-weight: 700;
-    margin-top: 50px; /* MODIFIÉ : Au lieu de 30px, repousse le bouton plus bas */
+    margin-top: 50px;
     transition: all 0.3s ease;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Un bord très léger au repos */
+    z-index: 1;
 }
 
+/* On prépare les deux pseudo-éléments (les traits) */
+.btn-outline::before,
+.btn-outline::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 2px solid transparent; /* Ils sont invisibles au début */
+    box-sizing: border-box;
+    z-index: -1;
+}
+
+/* Le premier élément s'occupe du bord HAUT et DROIT */
+.btn-outline::before {
+    top: -2px;    /* On aligne sur la bordure existante */
+    left: -2px;
+}
+
+/* Le deuxième élément s'occupe du bord BAS et GAUCHE */
+.btn-outline::after {
+    bottom: -2px;
+    right: -2px;
+}
+
+/* --- EFFET AU SURVOL (HOVER) --- */
+
 .btn-outline:hover {
-    background: white;
-    color: var(--dark-blue);
+    color: white; /* On garde le texte blanc pour voir l'effet */
+    background: rgba(255, 255, 255, 0.05); /* Un très léger voile blanc au fond */
+}
+
+.btn-outline:hover::before {
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-top-color: #ffffff;
+    border-right-color: #ffffff;
+    transition: width 0.2s ease-out, height 0.2s ease-out 0.2s;
+}
+
+.btn-outline:hover::after {
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-bottom-color: #ffffff;
+    border-left-color: #ffffff;
+    transition: width 0.2s ease-out, height 0.2s ease-out 0.2s;
+}
+
+/* Animation de sortie (quand on enlève la souris) */
+.btn-outline::before,
+.btn-outline::after {
+    transition: height 0.2s ease-out, width 0.2s ease-out 0.2s;
 }
 
 /* ========================================= */
