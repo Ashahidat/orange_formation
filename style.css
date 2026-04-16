@@ -153,31 +153,26 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Logo */
-.logo {
-    color: white;
-    font-weight: 800;
-    font-size: 32px;
-    display: flex;
-    align-items: center;
-    letter-spacing: 2px;
+/* --- STYLE DU NOUVEAU LOGO IMAGE --- */
+a.logo {
+    text-decoration: none; /* Enlève le soulignement potentiel du lien */
 }
 
-.logo-icon {
-    display: flex;
-    gap: 3px;
-    margin-right: 12px;
+.site-logo {
+    max-height: 45px; /* Hauteur par défaut dans la barre de navigation */
+    width: auto;
+    transition: all 0.3s ease;
 }
 
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 2px;
+/* Réduire la taille du logo quand on scroll (la barre devient plus petite) */
+.header-fixed.is-sticky .site-logo {
+    max-height: 35px;
 }
 
-.d1 { background: #ff007c; }
-.d2 { background: #fbb034; }
-.d3 { background: #007bff; }
+/* Ajustement spécifique pour la taille du logo dans le footer */
+.footer-logo .site-logo {
+    max-height: 55px; 
+}
 
 /* Navigation Links */
 .nav-links {
@@ -738,7 +733,11 @@
     margin-bottom: 60px;
 }
 
-.footer-logo { font-size: 24px; margin-bottom: 25px; }
+.footer-logo { 
+    font-size: 24px; 
+    margin-bottom: 25px; 
+    display: inline-block;
+}
 
 .footer-about {
     font-size: 14px;
